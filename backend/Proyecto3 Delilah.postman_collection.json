@@ -1,0 +1,474 @@
+{
+	"info": {
+		"_postman_id": "bf8de75c-c49f-4cd5-8a8d-ab29fd89a7f7",
+		"name": "Proyecto3 Delilah",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "Consultar usuarios",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjoibWF0aWxkYV91c2VyIiwibm9tYnJlIjoiTWF0aWxkYWFhYSIsImFwZWxsaWRvIjoiU2FuY2hleiIsImNvcnJlbyI6Ik1hdGlsZGFAY29ycmVvLmNvbSIsInRlbGVmb25vIjoiMzMzMy0tNTQzMjEiLCJkaXJlY2Npb24iOiJDQUxMRSAzMyAjIDIyIC0gMzMiLCJ0aXBvIjoiYWRtaSIsImlhdCI6MTU5MzgxNzkyMn0.jKwZQE_qvK_xnpjCXnGsD0ApS7V_uSArppewC9-4KwQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3001/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear usuarios",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"usuario\": \"Mauricio\",\n        \"contrasena\": \"clave_mauricio\",\n        \"nombre\": \"Mauricio\",\n        \"apellido\": \"Sanchez\",\n        \"correo\": \"Mauricio@correo.com\",\n        \"telefono\": \"0112233\",\n        \"direccion\": \"CALLE 33 # 22 - 33\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Iniciar sesion",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"usuario\": \"matilda_user\",\n        \"contrasena\": \"clave_nueva\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/usuarios/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"usuarios",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar usuarios",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjoibWF0aWxkYV91c2VyIiwibm9tYnJlIjoiTWF0aWxkYSIsImFwZWxsaWRvIjoiU2FuY2hleiIsImNvcnJlbyI6Ik1hdGlsZGFAY29ycmVvLmNvbSIsInRlbGVmb25vIjoiOTg3NjU0MzIxIiwiZGlyZWNjaW9uIjoiQ0FMTEUgMTMgIyAyMiAtIDMzIiwidGlwbyI6InVzZXIiLCJpYXQiOjE1OTM3Mjc5ODl9.E7uNL1Ee6QhD3-BsgwPx1hU5rjvnCMHOUESgfg4lPdY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"contrasena\": \"clave_nueva\",\n        \"nombre\": \"Matildaaaa\",\n        \"apellido\": \"Sanchez\",\n        \"correo\": \"Matilda@correo.com\",\n        \"telefono\": \"3333--54321\",\n        \"direccion\": \"CALLE 33 # 22 - 33\",\n        \"tipo\": \"admi\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/usuarios?usuario=matilda_user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"usuarios"
+							],
+							"query": [
+								{
+									"key": "usuario",
+									"value": "matilda_user"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar usuarios",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjoibWF0aWxkYV91c2VyIiwiY29udHJhc2VuYSI6ImNsYXZlX21hdGlsZGEiLCJub21icmUiOiJNYXRpbGRhIiwiYXBlbGxpZG8iOiJTYW5jaGV6IiwiY29ycmVvIjoiTWF0aWxkYUBjb3JyZW8uY29tIiwidGVsZWZvbm8iOiI5ODc2NTQzMjEiLCJkaXJlY2Npb24iOiJDQUxMRSAxMyAjIDIyIC0gMzMiLCJpYXQiOjE1OTM0NTYxNjh9.y7GtFYDjbG4tUk7az-wV8AnJ1MY8mQq3XHLeP1UOQnE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3001/api/usuarios?usuario=matilda_user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"usuarios"
+							],
+							"query": [
+								{
+									"key": "usuario",
+									"value": "matilda_user"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Productos",
+			"item": [
+				{
+					"name": "Consultar Productos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjoiTWF1cmljaW8iLCJub21icmUiOiJNYXVyaWNpbyIsImFwZWxsaWRvIjoiU2FuY2hleiIsImNvcnJlbyI6Ik1hdXJpY2lvQGNvcnJlby5jb20iLCJ0ZWxlZm9ubyI6IjAxMTIyMzMiLCJkaXJlY2Npb24iOiJDQUxMRSAzMyAjIDIyIC0gMzMiLCJ0aXBvIjoidXNlciIsImlhdCI6MTU5MzgxNjExNn0.a2fhgopgx5HKw1jjIK4ByV3SlM2Ey2C2iTvqTXAPhIo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3001/api/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Producto",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjoibWF0aWxkYV91c2VyIiwibm9tYnJlIjoiTWF0aWxkYWFhYSIsImFwZWxsaWRvIjoiU2FuY2hleiIsImNvcnJlbyI6Ik1hdGlsZGFAY29ycmVvLmNvbSIsInRlbGVmb25vIjoiMzMzMy0tNTQzMjEiLCJkaXJlY2Npb24iOiJDQUxMRSAzMyAjIDIyIC0gMzMiLCJ0aXBvIjoiYWRtaSIsImlhdCI6MTU5MzgxNzkyMn0.jKwZQE_qvK_xnpjCXnGsD0ApS7V_uSArppewC9-4KwQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Perro\",\n    \"descripcion\": \"secilla, salchicha americana, pan, ripio y queso\",\n    \"precioUnidad\": \"8000\",\n    \"pathImagen\":\"https://hungrysofia.files.wordpress.com/2016/05/img_7789.jpg?w=620\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Producto",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjoibWF0aWxkYV91c2VyIiwibm9tYnJlIjoiTWF0aWxkYWFhYSIsImFwZWxsaWRvIjoiU2FuY2hleiIsImNvcnJlbyI6Ik1hdGlsZGFAY29ycmVvLmNvbSIsInRlbGVmb25vIjoiMzMzMy0tNTQzMjEiLCJkaXJlY2Npb24iOiJDQUxMRSAzMyAjIDIyIC0gMzMiLCJ0aXBvIjoiYWRtaSIsImlhdCI6MTU5MzgxNzkyMn0.jKwZQE_qvK_xnpjCXnGsD0ApS7V_uSArppewC9-4KwQ"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Perro\",\n    \"descripcion\": \"secilla, salchicha americana, pan, ripio y queso\",\n    \"precioUnidad\": \"8500\",\n    \"pathImagen\":\"https://hungrysofia.files.wordpress.com/2016/05/img_7789.jpg?w=620\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/productos?id=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"productos"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Producto",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjoibWF0aWxkYV91c2VyIiwibm9tYnJlIjoiTWF0aWxkYWFhYSIsImFwZWxsaWRvIjoiU2FuY2hleiIsImNvcnJlbyI6Ik1hdGlsZGFAY29ycmVvLmNvbSIsInRlbGVmb25vIjoiMzMzMy0tNTQzMjEiLCJkaXJlY2Npb24iOiJDQUxMRSAzMyAjIDIyIC0gMzMiLCJ0aXBvIjoiYWRtaSIsImlhdCI6MTU5MzgxNzkyMn0.jKwZQE_qvK_xnpjCXnGsD0ApS7V_uSArppewC9-4KwQ"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3001/api/productos?id=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"productos"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Pedidos",
+			"item": [
+				{
+					"name": "Consultar Pedidos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjoibWF0aWxkYV91c2VyIiwibm9tYnJlIjoiTWF0aWxkYWFhYSIsImFwZWxsaWRvIjoiU2FuY2hleiIsImNvcnJlbyI6Ik1hdGlsZGFAY29ycmVvLmNvbSIsInRlbGVmb25vIjoiMzMzMy0tNTQzMjEiLCJkaXJlY2Npb24iOiJDQUxMRSAzMyAjIDIyIC0gMzMiLCJ0aXBvIjoiYWRtaSIsImlhdCI6MTU5MzgxNzkyMn0.jKwZQE_qvK_xnpjCXnGsD0ApS7V_uSArppewC9-4KwQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3001/api/pedidos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Pedidos",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjoibWF0aWxkYV91c2VyIiwibm9tYnJlIjoiTWF0aWxkYWFhYSIsImFwZWxsaWRvIjoiU2FuY2hleiIsImNvcnJlbyI6Ik1hdGlsZGFAY29ycmVvLmNvbSIsInRlbGVmb25vIjoiMzMzMy0tNTQzMjEiLCJkaXJlY2Npb24iOiJDQUxMRSAzMyAjIDIyIC0gMzMiLCJ0aXBvIjoiYWRtaSIsImlhdCI6MTU5MzgxNzkyMn0.jKwZQE_qvK_xnpjCXnGsD0ApS7V_uSArppewC9-4KwQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"usuario\": \"Mauricio\",\n    \"forma\": \"1\",\n    \"total\": \"15000\",\n    \"productos\": [\n        {\n            \"id\": \"1\",\n            \"cantidad\": \"1\"\n        },\n        {\n            \"id\": \"3\",\n            \"cantidad\": \"1\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/pedidos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar Pedidos de un usuario",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjoibWF0aWxkYV91c2VyIiwibm9tYnJlIjoiTWF0aWxkYWFhYSIsImFwZWxsaWRvIjoiU2FuY2hleiIsImNvcnJlbyI6Ik1hdGlsZGFAY29ycmVvLmNvbSIsInRlbGVmb25vIjoiMzMzMy0tNTQzMjEiLCJkaXJlY2Npb24iOiJDQUxMRSAzMyAjIDIyIC0gMzMiLCJ0aXBvIjoiYWRtaSIsImlhdCI6MTU5MzgxNzkyMn0.jKwZQE_qvK_xnpjCXnGsD0ApS7V_uSArppewC9-4KwQ"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3001/api/pedidos/usuario?usuario=Mauricio",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"pedidos",
+								"usuario"
+							],
+							"query": [
+								{
+									"key": "usuario",
+									"value": "Mauricio"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar estado pedido",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjoibWF0aWxkYV91c2VyIiwibm9tYnJlIjoiTWF0aWxkYWFhYSIsImFwZWxsaWRvIjoiU2FuY2hleiIsImNvcnJlbyI6Ik1hdGlsZGFAY29ycmVvLmNvbSIsInRlbGVmb25vIjoiMzMzMy0tNTQzMjEiLCJkaXJlY2Npb24iOiJDQUxMRSAzMyAjIDIyIC0gMzMiLCJ0aXBvIjoiYWRtaSIsImlhdCI6MTU5MzgxNzkyMn0.jKwZQE_qvK_xnpjCXnGsD0ApS7V_uSArppewC9-4KwQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3001/api/pedidos?&pedido=12&estado=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"pedidos"
+							],
+							"query": [
+								{
+									"key": null,
+									"value": null
+								},
+								{
+									"key": "pedido",
+									"value": "12"
+								},
+								{
+									"key": "estado",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
