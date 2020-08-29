@@ -35,60 +35,8 @@ Abrir una terminal, ubicarse en la carpeta raíz del proyecto y ejecutar el sigu
 npm run dev
 ```
 ## 4. Peticiones HTTP REST
-En este ejemplo se uso la herramienta **postman**, en la carpeta raíz se encuentra el archivo (*Proyecto3 Delilah.postman_collection.json*) exportado del postman con las peticiones HTTP que se usaron, se puede usar este json para importarlo al postman local.
+En este ejemplo se uso la herramienta **postman**, en la carpeta backend se encuentra el archivo **Proyecto3 Delilah.postman_collection.json** (*RUTA: Proyectos_3_Delilah/backend/Proyecto3 Delilah.postman_collection.json*) exportado del postman con las peticiones HTTP que se usaron, se puede usar este json para importarlo al postman local.
 Para el proyecto se uso Web Tokens, para poder validar que el usuario tenga los permisos necesarios al realizar la peticion HTTP REST.
-### 4.1. Usuario (/api/usuarios)
-#### GET Consultar usuarios (Administrador).
-**URL** (http://localhost:3001/api/usuarios)
-**Headers** 
-- **token**: token, generado por jwt.
-#### POST Crear usuario.
-**URL**(http://localhost:3001/api/usuarios)
-- **body** (json)
-```json
-{
-        "usuario": "Mauricio",
-        "contrasena": "clave_mauricio",
-        "nombre": "Mauricio",
-        "apellido": "Sanchez",
-        "correo": "Mauricio@correo.com",
-        "telefono": "0112233",
-        "direccion": "CALLE 33 # 22 - 33"
-}
-```
-#### POST Inicio de sesión
-**URL**(http://localhost:3001/api/usuarios/login)
-- **body** (json)
-```json
-{
-        "usuario": "matilda_user",
-        "contrasena": "clave_nueva"
-}
-```
-#### PUT Actualizar información usuario (user, admi)
-**URL**(http://localhost:3001/api/usuarios)
-**Parametro** (usuario = matilda_user)
-**Headers** 
-- **Content-Type**: application/json
-- **token**: token, generado por jwt.
-- **body** (json)
-```json
-{
-        "contrasena": "clave_nueva",
-        "nombre": "Matildaaaa",
-        "apellido": "Sanchez",
-        "correo": "Matilda@correo.com",
-        "telefono": "3333--54321",
-        "direccion": "CALLE 33 # 22 - 33",
-        "tipo": "user"
-}
-```
-#### DEL Eliminar usuario (user, admi)
-**URL** (http://localhost:3001/api/usuarios)
-**Parametro** (usuario = matilda_user)
-**Headers** 
-- **Content-Type**: application/json
-- **token**: token, generado por jwt.
 
 ---
 ## Modelo base de datos

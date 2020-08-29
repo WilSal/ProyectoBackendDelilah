@@ -1,4 +1,4 @@
-const {obtenerPedidos, crearEncabezadoPedido, crearDetallePedido, obtenerPedidosUsuario, actualizarPedido} = require('../models/pedidos');
+const {obtenerPedidos, crearEncabezadoPedido, crearDetallePedido, obtenerPedidosUsuario, actualizarPedido, eliminarPedido} = require('../models/pedidos');
 const {obtenerUsuarioId} = require('../models/usuarios');
 const Pedido = require('../models/pedidos');
 
@@ -35,6 +35,14 @@ pedidosCtrl.putPedido = async(pedido, estado) => {
     if (pedido && estado) {
         await actualizarPedido(pedido, estado);
         return 'Pedido actualizado';
+    }
+    return 'Información incorrecta';
+}
+
+pedidosCtrl.delPedido = async(pedido) => {
+    if (pedido) {
+        await eliminarPedido(pedido);
+        return 'Pedido eliminado';
     }
     return 'Información incorrecta';
 }

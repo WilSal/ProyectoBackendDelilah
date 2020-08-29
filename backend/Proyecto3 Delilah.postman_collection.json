@@ -111,7 +111,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"contrasena\": \"clave_nueva\",\n        \"nombre\": \"Matildaaaa\",\n        \"apellido\": \"Sanchez\",\n        \"correo\": \"Matilda@correo.com\",\n        \"telefono\": \"3333--54321\",\n        \"direccion\": \"CALLE 33 # 22 - 33\",\n        \"tipo\": \"admi\"\n}",
+							"raw": "{\n        \"contrasena\": \"clave_nueva\",\n        \"nombre\": \"Matildaaaa\",\n        \"apellido\": \"Sanchez\",\n        \"correo\": \"Matilda@correo.com\",\n        \"telefono\": \"3333--54321\",\n        \"direccion\": \"CALLE 33 # 22 - 33\",\n        \"tipo\": \"user\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -460,6 +460,43 @@
 								{
 									"key": "estado",
 									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar pedido",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjoibWF0aWxkYV91c2VyIiwibm9tYnJlIjoiTWF0aWxkYWFhYSIsImFwZWxsaWRvIjoiU2FuY2hleiIsImNvcnJlbyI6Ik1hdGlsZGFAY29ycmVvLmNvbSIsInRlbGVmb25vIjoiMzMzMy0tNTQzMjEiLCJkaXJlY2Npb24iOiJDQUxMRSAzMyAjIDIyIC0gMzMiLCJ0aXBvIjoiYWRtaSIsImlhdCI6MTU5MzgxNzkyMn0.jKwZQE_qvK_xnpjCXnGsD0ApS7V_uSArppewC9-4KwQ"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3001/api/pedidos?pedido=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"pedidos"
+							],
+							"query": [
+								{
+									"key": "pedido",
+									"value": "1"
 								}
 							]
 						}
